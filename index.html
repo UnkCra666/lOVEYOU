@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Ангелина</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#0b1016;
+  --top:calc(var(--tg-safe-area-inset-top,env(safe-area-inset-top,0px)) + var(--tg-content-safe-area-inset-top,0px));
+  --bottom:var(--tg-safe-area-inset-bottom,env(safe-area-inset-bottom,0px));
+}
+html,body{height:100%;background:var(--ink);overflow:hidden;color:#fff;touch-action:none;overscroll-behavior:none;
+  user-select:none;-webkit-user-select:none;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+canvas{display:block;position:fixed;inset:0;width:100%;height:100%}
+#name{position:fixed;top:0;left:0;right:0;text-align:center;padding-top:calc(var(--top) + 14px);
+  font-weight:600;font-size:17px;letter-spacing:.04em;text-shadow:0 1px 14px rgba(0,0,0,.35);pointer-events:none}
+#btn{position:fixed;left:50%;bottom:calc(var(--bottom) + 28px);transform:translateX(-50%);width:52px;height:52px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.08);
+  color:#fff;display:grid;place-items:center;cursor:pointer}
+#start{position:fixed;inset:0;z-index:10;display:grid;place-items:center;background:rgba(5,8,12,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:pointer}
+#start i{width:84px;height:84px;border-radius:50%;border:1px solid rgba(255,255,255,.7);display:grid;place-items:center}
+#start.hide{display:none}
+#go{position:fixed;right:22px;bottom:calc(var(--bottom) + 36px);font-size:26px;text-decoration:none;line-height:1;filter:drop-shadow(0 1px 8px rgba(0,0,0,.45));z-index:5}
+svg{width:22px;height:22px;fill:currentColor}
+#start svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="name"></div>
+<button id="btn" aria-label="pause"><svg id="ico" viewBox="0 0 24 24"></svg></button>
+<a id="go" href="flowers.html" aria-label="flowers">🌸</a>
+<div id="start"><i><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></i></div>
+<audio id="a" src="music.m4a" loop playsinline preload="auto"></audio>
+<script src="app.js"></script>
+</body>
+</html>
